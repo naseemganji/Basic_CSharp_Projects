@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MathOperations
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declare two numbers to work with
+            Console.WriteLine("Enter first number for the mathematical operation");
+            decimal firstNumber = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("Enter second number for the mathematical operation");
+            decimal secondNumber = Convert.ToDecimal(Console.ReadLine());
+
+            // 1. Add
+            decimal outPut = firstNumber + secondNumber;
+            Console.WriteLine("Addition: " + outPut);
+
+            // 2. Subtract
+            decimal difference = secondNumber - firstNumber;
+            Console.WriteLine("Subtraction: " + difference);
+
+            // 3. Multiply
+            decimal product = firstNumber * secondNumber;
+            Console.WriteLine("Multiplication: " + product);
+
+            // 4. Divide
+            decimal divisionOutput = secondNumber / firstNumber;
+            Console.WriteLine("Division: " + divisionOutput);
+        }
+    }
+}
