@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace m7_largeNumMath
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+        //First Multiplication by 50
+        Console.WriteLine("Please enter first number");
+        int firstNumber = Convert.ToInt32(Console.ReadLine());
+        int multiplier = 50;
+        int result = firstNumber * multiplier;
+        Console.WriteLine(result);
+        // Second Addition of 25
+        Console.WriteLine("Please enter second number");
+        int secondNumber = Convert.ToInt32(Console.ReadLine());
+        int result2 = secondNumber + 25;
+        Console.WriteLine(result2);
+        // third Division by 50
+        Console.WriteLine("Please enter third number");
+        decimal thirdNumber = Convert.ToDecimal(Console.ReadLine());
+        decimal result3 = thirdNumber / 25;
+        Console.WriteLine(result3);
+        // fourth Greater than 50
+        Console.WriteLine("Please enter fourth number");
+        int fourthNumber = Convert.ToInt32(Console.ReadLine());
+        bool result4 = fourthNumber > 50;
+        Console.WriteLine(result4);
+        // Fifth Remainder
+        Console.WriteLine("Please enter fifth number");
+        int fifthNumber = Convert.ToInt32(Console.ReadLine());
+        int result5 = fifthNumber % 7;
+        Console.WriteLine(result5);
+      
+        }
+    }
+}
