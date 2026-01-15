@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace m7_mathComparisonAssignment
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Anonymous Income Comparison Program");
+            Console.WriteLine("Person 1");
+            Console.WriteLine("Hourly Rate:");
+            decimal hourlyRate1 = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("Hours worked per week");
+            decimal hoursWorked1 = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("Person 2");
+            Console.WriteLine("Hourly Rate:");
+            decimal hourlyRate2 = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("Hours worked per week");
+            decimal hoursWorked2 = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("Annual salary of Person 1:");
+            decimal annualSalary1 = hourlyRate1 * hoursWorked1 * 52;
+            Console.WriteLine(annualSalary1);
+            Console.WriteLine("Annual salary of Person 2:");
+            decimal annualSalary2 = hourlyRate2 * hoursWorked2 * 52;
+            Console.WriteLine(annualSalary2);
+            if (annualSalary1 > annualSalary2)
+            {
+                                Console.WriteLine("Person 1 makes more money than Person 2");
+            }
+            else
+            {
+                Console.WriteLine("Person 2 makes more money than Person 1");
+            } Console.WriteLine("-------------------------------------------------");
+
+        }
+    }
+}
