@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAssign_While
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            {
+                int counter1 = 1;
+
+
+                do
+                {
+                    Console.WriteLine("Inside Do while Loop " + counter1);
+                    counter1++;
+                } while (counter1 <= 5);
+
+                Console.WriteLine("number of repetitions: " + (counter1-1));
+
+                Console.ReadLine();
+            }
+
+
+
+            int counter2 = 1;
+            while (counter2 <= 10)
+            {
+                Console.WriteLine("while loop " + counter2);
+                counter2++;
+                
+            }
+            Console.WriteLine("number of repetitions: " + (counter2-1));
+            Console.ReadLine();
+
+        }
+    }
+    
+}
