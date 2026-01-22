@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace m12_string_assignment
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please enter a first string for concatenation:");
+            string userInput1 = Console.ReadLine();
+            Console.WriteLine("Please enter second string for concatenation:");
+            string userInput2 = Console.ReadLine();
+            Console.WriteLine("Please enter third string for concatenation:");
+            string userInput3 = Console.ReadLine();
+
+            string concatenatedResult = userInput1 + userInput2 + userInput3; //concatenate the three strings
+            Console.WriteLine("Concatenated result: " + concatenatedResult); //display concatenated result
+            Console.ReadLine();
+            Console.WriteLine("lowercase result: " + concatenatedResult.ToLower());//concatenated result in lowercase
+            Console.WriteLine("uppercase result: " + concatenatedResult.ToUpper());//concatenated result in uppercase
+        }
+    }
+}
