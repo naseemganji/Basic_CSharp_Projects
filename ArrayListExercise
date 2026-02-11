@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ArrayListExercize
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Create a one - dimensional Array of strings.Ask the user to select an index of the Array and then display the string at that index on the screen.
+            
+            string[] countries = { "India", "USA", "UK", "Australia", "Germany" };
+            var selectedIndex=0;
+            var isValidIndex = false;
+            while (!isValidIndex)
+            {
+                Console.WriteLine("Select an index of the Array (0-4): ");
+                var input = Console.ReadLine();
+                if (int.TryParse(input, out selectedIndex) && selectedIndex >= 0 && selectedIndex < countries.Length)
+                {
+                    isValidIndex = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid index. Please try again.");
+                }
+            }
+
+            Console.WriteLine($"You selected: {countries[selectedIndex]}");
+            
+
+
+
+           // Create a one - dimensional Array of integers.Ask the user to select an index of the Array and then display the integer at that index on the screen.
+
+            int[] months = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+            bool isMonthIndex = false;
+            int selectedMonthIndex=0;
+            while (!isMonthIndex)
+            {
+                Console.WriteLine("Select an index of the Array (0-11): ");
+                var input = Console.ReadLine(); 
+                if (int.TryParse(input, out selectedMonthIndex) && selectedMonthIndex >= 0 && selectedMonthIndex < months.Length)
+                {
+                    isMonthIndex = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid index. Please try again.");
+                }
+            }
+            Console.WriteLine($"You selected: {months[selectedMonthIndex]}");
+            
+             /*  
+             *       Create a list of strings. Ask the user to select an index of the list and then display the content at that index on the screen.
+             *       Add comments to each line or block of your code to explain what it does exactly, so that another developer could read and understand your code. 
+             */
+
+                List<string> fruits = new List<string> { "Apple", "Banana", "Cherry", "Date", "Elderberry","Watermelon","Pomegranate" };   
+                bool isFruitIndex = false;
+                int selectedFruitIndex = 0;
+            while (!isFruitIndex) 
+            {
+                Console.WriteLine("Select an index of the list (0-6): ");
+                string input = Console.ReadLine();
+                if (int.TryParse(input, out selectedFruitIndex) && selectedFruitIndex >= 0 && selectedFruitIndex < fruits.Count)
+                {
+                    isFruitIndex = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid index. Please try again.");
+                }
+                Console.WriteLine("You selected: " + fruits[selectedFruitIndex]);
+
+            }
+        }
+    }
+}
+
