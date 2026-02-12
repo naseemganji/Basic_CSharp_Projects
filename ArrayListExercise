@@ -16,7 +16,7 @@ namespace ArrayListExercize
             string[] countries = { "India", "USA", "UK", "Australia", "Germany" };
             var selectedIndex=0;
             var isValidIndex = false;
-            while (!isValidIndex)
+            while (!isValidIndex) // iteration for accepting input and dipsplaying countries per given input index
             {
                 Console.WriteLine("Select an index of the Array (0-4): ");
                 var input = Console.ReadLine();
@@ -40,7 +40,7 @@ namespace ArrayListExercize
             int[] months = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
             bool isMonthIndex = false;
             int selectedMonthIndex=0;
-            while (!isMonthIndex)
+            while (!isMonthIndex) // iteration for accepting input and dipsplaying months per given input index
             {
                 Console.WriteLine("Select an index of the Array (0-11): ");
                 var input = Console.ReadLine(); 
@@ -63,7 +63,7 @@ namespace ArrayListExercize
                 List<string> fruits = new List<string> { "Apple", "Banana", "Cherry", "Date", "Elderberry","Watermelon","Pomegranate" };   
                 bool isFruitIndex = false;
                 int selectedFruitIndex = 0;
-            while (!isFruitIndex) 
+            while (!isFruitIndex) // iteration for accepting input and dipsplaying fruits per given input index
             {
                 Console.WriteLine("Select an index of the list (0-6): ");
                 string input = Console.ReadLine();
