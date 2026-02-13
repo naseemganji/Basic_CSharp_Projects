@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment_iteration_array
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            /*
+             * A one-dimensional array of strings.
+             * Ask the user to input some text. 
+             * A loop that iterates through each string in the array and adds the user's text input to the end of each string. 
+             * This step will not output anything to the console, but will update each array element by appending the user's text.
+             * Then create a second loop that prints off each string in the array one at a time.
+             * Save and execute your code.
+             */
+
+            // Create a one-dimensional array of strings
+            string[] stringArray = { "Hello ", "Goodbye ", "Welcome ", "Farewell ", "Greetings " };
+
+            // Asking the user to enter his name
+            Console.WriteLine("Please enter your name to append to each string:");
+            string userInput = Console.ReadLine();
+
+            // Looping through the array and append user's text to each element
+            for (int i = 0; i < stringArray.Length; i++)
+            {
+                stringArray[i] = stringArray[i] + userInput;
+            }
+
+            // Looping through the array and printing each string one at a time
+            Console.WriteLine("\nUpdated strings:");
+            for (int i = 0; i < stringArray.Length; i++)
+            {
+                Console.WriteLine(stringArray[i]);
+            }
+
+            // Keeping console window open
+            Console.WriteLine("\nPress any key to exit...");
+            Console.ReadKey();
+
+        }
+    }
+}
