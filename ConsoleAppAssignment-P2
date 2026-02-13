@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAppAssignment_Part2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // An infinite loop.
+            // Initialize a counter variable to control the loop
+
+            int counter = 0;
+
+            // while loop before adding termination condition
+            /*
+            while (true)
+            {
+                Console.WriteLine($"Loop iteration: {counter + 1}");
+                counter++;
+            }
+            */
+
+            // TO FIX THE INFINITE LOOP:
+            // Original issue: The loop condition was "while(true)" with no break condition
+            // Fix: Added a counter variable and set a termination condition (counter < 5)
+            // This ensures the loop will execute 5 times and then exit properly
+            while (counter < 5)
+            {
+                Console.WriteLine($"Loop iteration: {counter + 1}");
+                
+                // INCREMENT: This line is critical to fixing the infinite loop
+                // Without incrementing the counter, the condition would never become false
+                counter++;
+            }
+
+            Console.WriteLine("Loop completed successfully after iterating " +counter + " times!");
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+            
+        }
+    }
+}
