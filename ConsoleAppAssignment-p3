@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAppAssignment_P3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Loop using < operator
+            Console.WriteLine("Loop using < operator (i <5 therefore iterates from 0 to 4):");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine($"i = {i}");
+            }
+
+            Console.WriteLine(); // Empty line for extra line
+
+            // Loop using <= operator
+            Console.WriteLine("Loop using <= operator (i <= 5 therefore iterates from 0 to 5):");
+            for (int i = 0; i <= 5; i++)
+            {
+                Console.WriteLine($"i = {i}");
+            }
+
+            Console.WriteLine("\nPress any key to exit...");
+            Console.ReadKey();
+        }
+    }
+}
