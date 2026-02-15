@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAppAssignment_P4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // List of unique strings
+            List<string> fruits = new List<string> { "Apple", "Banana", "Cherry", "Date", "Strawberry" };
+            
+            bool found = false;
+            
+            // Continue accepting input until a match is found
+            while (!found)
+            {
+                // Ask the user to input text to search for
+                Console.WriteLine("Please Enter a fruit name:");
+                string userInput = Console.ReadLine();
+                
+                // Loop that iterates through the list
+                for (int i = 0; i < fruits.Count; i++)
+                {
+                    if (fruits[i] == userInput)
+                    {
+                        // Display the index of the matching item
+                        Console.WriteLine("Fruit found: " + fruits[i] + " with index of " + i);
+                        found = true;
+                        break; // Stop the loop once a match is found
+                    }
+                }
+                
+                // Check if the user input is not on the list
+                if (!found)
+                {
+                    Console.WriteLine("Your input is not on the list. Please try again.");
+                }
+            }
+            
+            Console.ReadLine();
+        }
+    }
+}
