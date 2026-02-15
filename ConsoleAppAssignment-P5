@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAppAssignmen_P5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Create a list of fruits with duplicate entries ("apple" and "banana" appear twice)
+            List<string> fruitList = new List<string> { "apple", "banana", "orange", "grape", "apple", "kiwi", "banana","orange","banana" };
+
+            // Display all available items to help the user know what to search for
+            Console.WriteLine("Available items in the list:");
+            foreach (string item in fruitList)
+            {
+                Console.WriteLine("- " + item);
+            }
+
+            // Prompt the user to enter their search term
+            Console.WriteLine("\nEnter text to search for:");
+            string userInput = Console.ReadLine();
+
+            // Track whether any matches are found
+            bool found = false;
+
+            // Loop through the entire list to find all matching indices
+            for (int i = 0; i < fruitList.Count; i++)
+            {
+                // Check if the current item matches the user's input
+                if (fruitList[i] == userInput)
+                {
+                    // Display the index where a match was found
+                    Console.WriteLine("Match found at index: " + i);
+                    // Set the flag to true indicating at least one match existed
+                    found = true;
+                    // Note: No break statement here - allows finding ALL matches
+                }
+            }
+
+            // After checking the entire list, inform the user if no matches were found
+            if (!found)
+            {
+                Console.WriteLine("Your input is not on the list.");
+            }
+
+            // Keep the console window open until the user presses Enter
+            Console.ReadLine();
+        }
+    }
+}
