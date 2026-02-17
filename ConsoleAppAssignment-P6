@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAppAssignment_P6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> fruits = new List<string> { "Apple", "Banana", "Cherry", "Date", "Apple", "Date", "Bluerberry", "Strawberry", "Grapes", "Cherry" };
+            
+            // Display all fruits in the list to the user
+            Console.WriteLine("Fruits in the List: "+string.Join(", ", fruits));
+            
+            Console.WriteLine("Enter a fruit name to check if unique or duplicate in the list or type 'exit' to quit");
+            
+            // Initialize input variable to store user input
+            string input = "";
+            
+            // Infinite looping until user types "exit"
+            while (input != "exit")
+            {
+                // Loop through each fruit in the list
+                foreach (string fruit in fruits)
+                {
+                    // Read user input from the console
+                    input = Console.ReadLine();
+                    
+                    // Counts how many times the input appears in the fruits list using case-insensitive comparison then it gives us the number of counts per fruit
+                    int fruitCount = fruits.FindAll(f => f.Equals(input, StringComparison.OrdinalIgnoreCase)).Count;
+                    
+                    // Check if the fruit appears more than once then it is duplicate
+                    if (fruitCount > 1)
+                    {
+                        Console.WriteLine(input + " - this item is a duplicate");
+                    }
+                    // Check if the fruit appears exactly once thus unique
+                    else if (fruitCount == 1)
+                    {
+                        Console.WriteLine(input + " - this item is unique");
+                    }
+                    // Check if the fruit doesn't appear at all in list
+                    else
+                    {
+                        Console.WriteLine(input + " - this item is not in the list!");
+                    }
+                }
+            }
+        }
+    }
+}
