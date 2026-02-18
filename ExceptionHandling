@@ -1,0 +1,74 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAppExceptionHandling_1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             * Create a list of integers. Ask the user for a number to divide each number in the list by. 
+             * Write a loop that takes each integer in the list, divides it by the number the user entered, 
+             * and displays the result to the screen.
+            */
+            List<int> numbers = new List<int>() { 10, 20, 30, 40, 50 };
+            Console.WriteLine(String.Join(", ",numbers)); // Display the list of numbers to the user
+            float input = 0;
+            float output = 0;
+            bool validInput = false;
+            // Using while loop to ensure that the user enters valid input
+            while (!validInput)
+            {
+                Console.WriteLine("Please enter a number to divide each number in the list by:");
+                
+                                 
+                try
+                {
+                    input = Convert.ToSingle(Console.ReadLine()); // takes input from the user and converts it to a float
+                    if (input != 0) // Check if the input is not zero to avoid division by zero error
+                    {
+                        foreach (int number in numbers) // Loop through each number in the list
+                        {
+                            output = number / input; // Divide the number by the user input and store the result in output
+                            Console.WriteLine($"{number} divided by {input} is {output}"); // Display the result to the screen
+                            validInput = true; // If the code reaches this point, it means the input was valid and we can exit the loop
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("You cannot divide by zero. Please enter a valid number.");
+                    }
+
+                }
+                catch (FormatException)  // Catches the exception if the user input is not a valid float
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                   
+                }
+                catch (OverflowException ex)
+                {
+                    Console.WriteLine("The number you entered is too large or too small. Please enter a valid number.");
+                    Console.WriteLine(ex.Message);
+                }
+                    catch (DivideByZeroException ex)
+                    {
+                        Console.WriteLine("You cannot divide by zero. Please enter a valid number.");
+                        Console.WriteLine(ex.Message);
+                    }
+                    //finally
+                    //            {
+                    //Console.WriteLine("This block will always execute, regardless of whether an exception was thrown or not and error can be logged into the database!");
+
+                    //}
+            }
+
+            
+
+            
+        }
+    }
+}
