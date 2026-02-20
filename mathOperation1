@@ -1,0 +1,147 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MainMethodAssignment
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*Create a class. In that class, create a method that will take in an integer, 
+             * create a math operation for this integer (addition, subtraction, etc.), 
+             * then return the answer as an integer.
+             * 
+             */
+
+            // Display welcome message and prompt user to select a math operation
+            Console.WriteLine("Welcome to the Math Operation Program!, please choose 1 for summation, 2 for subtraction, 3 for multiplication, and 4 for division");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            // Input validation: ensure user enters a number between 1 and 4
+            while (choice < 1 || choice > 4)
+            {
+                Console.WriteLine("Invalid choice, please choose either 1 - 4");
+                choice = Convert.ToInt32(Console.ReadLine());
+            }
+
+            // Prompt user for the first integer
+            Console.WriteLine("Enter the first integer:");
+            int input1 = Convert.ToInt32(Console.ReadLine());
+
+            // Prompt user for the second integer
+            Console.WriteLine("Enter the second integer:");
+            int input2 = Convert.ToInt32(Console.ReadLine());
+
+            // Create an instance of MathOperation class to perform calculations
+            MathOperation mathOperation = new MathOperation();
+            int result;
+
+            // Execute the selected math operation based on user's choice
+            switch (choice)
+            {
+                case 1:
+                    // Perform summation (addition)
+                    Console.WriteLine("You have chosen summation");
+                    result = mathOperation.summation(input1, input2);
+                    Console.WriteLine("The result is: " + result);
+                    break;
+                case 2:
+                    // Perform subtraction
+                    Console.WriteLine("You have chosen substraction");
+                    result = mathOperation.subtraction(input1, input2);
+                    Console.WriteLine("The result is: " + result);
+                    break;
+                case 3:
+                    // Perform multiplication
+                    Console.WriteLine("You have chosen multiplication");
+                    result = mathOperation.multiplication(input1, input2);
+                    Console.WriteLine("The result is: " + result);
+                    break;
+                case 4:
+                    // Perform division
+                    Console.WriteLine("You have chosen division");
+                    result = mathOperation.division(input1, input2);
+                    Console.WriteLine("The result is: " + result);
+                    break;
+                default:
+                    // Handle unexpected input (should not reach here due to validation loop)
+                    Console.WriteLine("Invalid choice, please choose either 1 - 4");
+                    break;
+            }
+        }
+    }
+}
+
+// MathOperation Public Class for addition, substraction, multiplication and division methods
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MainMethodAssignment
+{
+    /// <summary>
+    /// Provides basic mathematical operations on two integers
+    /// </summary>
+    public class MathOperation
+    {
+        /// <summary>
+        /// Adds two integers together
+        /// </summary>
+        /// <param name="num1">The first integer</param>
+        /// <param name="num2">The second integer</param>
+        /// <returns>The sum of num1 and num2</returns>
+        public int summation(int num1, int num2)
+        {
+            int sum = num1 + num2;
+            return sum;
+        }
+
+        /// <summary>
+        /// Subtracts the second integer from the first integer
+        /// </summary>
+        /// <param name="num1">The integer to subtract from</param>
+        /// <param name="num2">The integer to subtract</param>
+        /// <returns>The difference of num1 minus num2</returns>
+        public int subtraction(int num1, int num2)
+        {
+            int result = num1 - num2;
+            return result;
+        }
+
+        /// <summary>
+        /// Multiplies two integers together
+        /// </summary>
+        /// <param name="num1">The first integer</param>
+        /// <param name="num2">The second integer</param>
+        /// <returns>The product of num1 and num2</returns>
+        public int multiplication(int num1, int num2)
+        {
+            int result = num1 * num2;
+            return result;
+        }
+
+        /// <summary>
+        /// Divides the first integer by the second integer
+        /// </summary>
+        /// <param name="num1">The dividend (number to be divided)</param>
+        /// <param name="num2">The divisor (number to divide by)</param>
+        /// <returns>The quotient of num1 divided by num2, or 0 if division by zero is attempted</returns>
+        public int division(int num1, int num2)
+        {
+            // Check for division by zero to prevent runtime errors
+            if (num2 == 0 || num1 == 0)
+            {
+                Console.WriteLine("Cannot divide by zero");
+                return 0;
+            }
+            int result = num1 / num2;
+            return result;
+        }
+    }
+}
