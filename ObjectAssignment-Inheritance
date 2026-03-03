@@ -1,0 +1,77 @@
+// >>>>>>>>>>>>>> Object Class Person <<<<<<<<<<<<<<<<
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ObjectAssignment
+{
+    // Person class serves as the base class for employee information
+    public class Person
+    {
+        // Property to store the person's first name
+        public string FirstName { get; set; }
+        
+        // Property to store the person's last name
+        public string LastName { get; set; }
+
+        // Method to display the person's full name to the console
+        public void SayName()
+        {
+            // Write the full name in the specified format: "Full Name: [full name]"
+            Console.WriteLine($"Full Name: {FirstName} {LastName}");
+        }
+    }
+}
+
+// >>>>>>>>>>>>>> SuperClass Employee <<<<<<<<<<<<<<<<
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ObjectAssignment
+{
+    // Employee class inherits from Person and adds employee-specific properties
+    public class Employee : Person
+    {
+        // Property to store the employee's unique identifier
+        public int Id { get; set; }
+    }
+}
+
+// >>>>>>>>>>>>>> Main Program  <<<<<<<<<<<<<<<<
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ObjectAssignment
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            // Instantiate a new Employee object
+            Employee employee = new Employee();
+            
+            // Initialize the FirstName property (inherited from Person)
+            employee.FirstName = "Naseem";
+            
+            // Initialize the LastName property (inherited from Person)
+            employee.LastName = "Ganji";
+            
+            // Initialize the Id property specific to Employee
+            employee.Id = 1;
+            
+            // Call the SayName() method inherited from the Person superclass
+            employee.SayName(); // Output: Name: Naseem Ganji
+        }
+    }
+}
+
