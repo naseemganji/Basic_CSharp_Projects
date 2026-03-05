@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp_AbstractClass
+{
+    public abstract class Person
+    {
+        // Define the firstName property of type string
+        public string firstName { get; set; }
+        
+        // Define the lastName property of type string
+        public string lastName { get; set; }
+        // Declare an abstract method SayName that must be implemented by derived classes
+        public abstract void SayName();
+    }
+
+    // Define a class Employee that inherits from Person
+    public class Employee : Person
+    {
+        // Implement the SayName method from the Person class
+        public override void SayName()
+        {
+            // Print the full name of the employee
+            Console.WriteLine($"Name: {firstName} {lastName}");
+        }
+    }
+
+
+    internal class Program 
+    {
+        static void Main(string[] args)
+        {
+            /*Perform these actions and create a console app that includes the following:
+             * Create an abstract class called Person with two properties: string firstName and string lastName.
+             * Give it the method SayName(). 
+             * Create another class called Employee and have it inherit from the Person class. 
+             * Implement the SayName() method inside of the Employee class. 
+             * Inside the Main() method, instantiate an Employee object with firstName “Sample” and lastName “Student”. 
+             * Call the SayName() method on the object. 
+             * Add comments to each line or block of your code to explain what it does exactly, 
+             * so that another developer could read and understand your code. 
+             */
+            // Create an instance of the Employee class and set the firstName and lastName properties
+            Employee employee = new Employee() { firstName = "Naseem", lastName = "Ganji" };
+            // Call the SayName method on the employee object to print the full name
+            employee.SayName();
+
+
+        }
+    }
+}
