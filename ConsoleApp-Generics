@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+
+
+namespace ConsoleApp_Generics
+{
+    public class Employee<T>
+    {
+        // This property holds a list of things of type T, where T is a generic type parameter
+        public List<T> Things { get; set; }
+        public Employee() { }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(
+                "This console app demonstrates the use of generics in C#. " +
+                "We will create an Employee class that can hold a list of things of any type."
+            );
+            Console.WriteLine(
+                "First, we will create an Employee object that holds a list of strings, " +
+                "and then another Employee object that holds a list of integers."
+            );
+            // Create an Employee object that holds a list of strings
+            Employee<string> stringEmployee = new Employee<string>();
+            // Assign a list of strings to the Things property of the stringEmployee object
+            stringEmployee.Things = new List<string> { "Laptop", "Phone", "Notebook" };
+            // Create an Employee object that holds a list of integers
+            Employee<int> intEmployee = new Employee<int>();
+            // Assign a list of integers to the Things property of the intEmployee object
+            intEmployee.Things = new List<int> { 1, 2, 3, 4, 5 };
+            // Print the things for the stringEmployee
+            Console.WriteLine("Things for stringEmployee:");
+            foreach (var thing in stringEmployee.Things)
+            {
+                Console.WriteLine(thing);
+            }
+            // Print the things for the intEmployee
+            Console.WriteLine("Things for intEmployee:");
+            foreach (var thing in intEmployee.Things)
+            {
+                Console.WriteLine(thing);
+
+            }
+        }
+    }
+}
