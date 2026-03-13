@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace ConsoleApp_IO
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please enter a phone number to be registered:");
+            double input = Convert.ToDouble(Console.ReadLine());
+            string path = @"C:\Users\nasee\source\repos\Basic_C#_Programs folder\ConsoleApp-IO\IO-Logs";
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            // Create a text file using File.WriteAllText and overwritting if any file existing and writing phone number to the file.
+            string filePath = Path.Combine(path, "log.txt");
+            File.WriteAllText(filePath, $"Phone Number entered: {input}\nDate: {DateTime.Now}");
+            Console.WriteLine("File log.txt created successfully and '{0}' was added", input);
+
+            // Create a text file using StreamWriter from scratch and writing input value (phone number) to the file
+            string filePath2 = Path.Combine(path, "log2.txt");
+            using (StreamWriter writer = new StreamWriter(filePath2))
+            {
+                writer.WriteLine($"Number entered: {input}");
+                writer.WriteLine($"Date: {DateTime.Now}");
+            }
+            Console.WriteLine("File log2.txt created successfully and '{0}' was added", input);
+
+            // Option 3: Append to existing file or create if it doesn't exist
+            string filePath3 = Path.Combine(path, "log3.txt");
+            File.AppendAllText(filePath3, $"Number: {input}, Time: {DateTime.Now}\n");
+            Console.WriteLine("File log3.txt created successfully and phone number '{0}' was appended to the file", input);
+            Console.WriteLine("Files created successfully!");
+            Console.ReadLine();
+        }
+    }
+}
